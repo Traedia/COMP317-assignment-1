@@ -17,17 +17,11 @@ public class minHeap{
 
 	// Add new item to end of minheap
         array_[count] = s;
-
-	// If count = 1 no parent node exists therefore return
-	if(count == 1)
-	    return;
 	
 	// While value of new node is less than the value of parent
-	// TODO: PROPER STRING COMPARASION!!!
-	while(array_[count] < array_[count/2]){
+	while(array_[count].compareTo(array_[count/2]) < 0 && count > 1){
 	    // Swap the two nodes
 	    swap(count, count/2);
-
 	    // Go up to parent
 	    count/=2;
 	}
@@ -81,9 +75,8 @@ public class minHeap{
     private void downheap(count){
 	int i = 1;
 	// While node is larger than it's child swap and set i to child index
-	// TODO: MORE PROPER STRING COMPARISION!!!
-	while(i < count && (array_[i] > array_[2i] || array_[i] > array_[2i+1])){
-	    if(array_[2i] <= array[2i+1]){
+	while(i < count && (array_[i].compareTo(array_[2i]) > 0 || array_[i].compareTo(array_[2i+1]) > 0)){
+	    if(array_[2i].compareTo(array_[2i+1]) <= 0){
 		swap(i, 2i);
 		i = 2i;
 	    }
