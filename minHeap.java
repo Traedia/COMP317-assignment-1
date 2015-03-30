@@ -8,7 +8,7 @@ public class minHeap{
     }
 
     public add(String s) throws NumberFormatException{
-	// Increment array[0] (count of elements)
+	// Increment array_[0] (count of elements)
 	int count = Integer.parseInt(array_[0]);
 	count++;
 	if(count > array_.length())
@@ -46,7 +46,7 @@ public class minHeap{
 	swap(1, count);
 
 	// Store value of string to be retrieved 
-	string s = array[count];
+	string s = array_[count];
 	
 	// Decrement min-heap
 	count--;                // count is used later on. 
@@ -57,7 +57,7 @@ public class minHeap{
     }
 
     public string replace(string s, boolean write){
-	if(array[0] == 0)
+	if(array_[0] == 0)
 	    return null;
 	
 	string root = array_[1];
