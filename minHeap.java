@@ -31,7 +31,7 @@ public class minHeap{
     private swap(int a, int b){
 	string temp;
 	temp = array_[a];
-	array_[a] = array[b];
+	array_[a] = array_[b];
 	array_[b] = temp;
     }
 
