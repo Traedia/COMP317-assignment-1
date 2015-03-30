@@ -15,20 +15,24 @@ public class xsort{
     	
     	try
     	{
-		    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		    BufferedReader br = new BufferedReader(new FileReader (args[0]));
+		    String line;
 		    
 		    
 		    //Data for output file
 		    //No need for another file name, as there is one above (output.txt)
-		    String actualOutput = "";
+		    String actualOutput;
+		   // List<String> strArray = new List<String>();
 		    
 		    PrintWriter writer = new PrintWriter("output.txt", "UTF-8");
 		    
 		    //Possibly needed for reading the data input.
 		    //String[] input = br.readLine.split(" ");
-		    
-		if(args.length > 0){
-			
+	while((line = br.readLine()) != null)
+	{
+		actualOutput = br.readLine();
+		System.out.println(actualOutput);
+
 		for(int i=1; i< args.length ; i++)
 		{
 			//runsize
@@ -73,6 +77,8 @@ public class xsort{
 			
 		}
 	}
+	
+	br.close();
 }
 	    // We need a way to parse the strings and run the program in the way the user has specified.
 	    // args[] contains all the arguments seperated by a space
