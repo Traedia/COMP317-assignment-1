@@ -15,10 +15,19 @@ public class xsort{
     	
     	try
     	{
-		    BufferedReader br = new BufferedReader(new FileReader (args[0]));
+		    
+		    
+		    if(args.length == 0 )
+		    {
+		    	System.err.println("");
+		    	System.err.println("Please enter in the name of the file you want to sort");
+		    	System.exit(0);
+		    }
+
 		    String line;
 		    
-		    
+		    BufferedReader br = new BufferedReader(new FileReader (args[0]));
+
 		    //Data for output file
 		    //No need for another file name, as there is one above (output.txt)
 		    String actualOutput;
