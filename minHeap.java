@@ -1,19 +1,19 @@
 public class minHeap{
     
-    private string array_[];
+    private String[] array_;
     
     public minHeap(int size){
-	array_[] = new string[size];
-	array_[0] = 0;
+	array_ = new String[size];
+	array_[0] = Integer.toString(0);
     }
 
-    public add(String s) throws NumberFormatException{
+    public void add(String s) throws NumberFormatException{
 	// Increment array_[0] (count of elements)
 	int count = Integer.parseInt(array_[0]);
 	count++;
-	if(count > array_.length())
+	if(count > array_.length)
 	    return;
-	array_[0] = count;
+	array_[0] = Integer.toString(count);
 
 	// Add new item to end of minheap
         array_[count] = s;
@@ -28,39 +28,39 @@ public class minHeap{
 
     }
     
-    private swap(int a, int b){
-	string temp;
+    private void swap(int a, int b){
+	String temp;
 	temp = array_[a];
 	array_[a] = array_[b];
 	array_[b] = temp;
     }
 
-    public string get(int a) throws NumberFormatException{
+    public String get(int a) throws NumberFormatException{
 
-	// Return null string if no elements in array
-	if(array_[0] == 0)
+	// Return null String if no elements in array
+	if(array_[0] == "0")
 	    return null;
 
 	// Swap first and last element
 	int count = Integer.parseInt(array_[0]);
 	swap(1, count);
 
-	// Store value of string to be retrieved 
-	string s = array_[count];
+	// Store value of String to be retrieved 
+	String s = array_[count];
 	
 	// Decrement min-heap
 	count--;                // count is used later on. 
-	array_[0] = count;
+	array_[0] = Integer.toString(count);
 
 	downheap(count);
 	return s;
     }
 
-    public string replace(string s, boolean write){
-	if(array_[0] == 0)
+    public String replace(String s, boolean write){
+	if(array_[0]== "0")
 	    return null;
 	
-	string root = array_[1];
+	String root = array_[1];
 	array_[1] = s;
 	int count = Integer.parseInt(array_[0]);
 	
@@ -68,11 +68,13 @@ public class minHeap{
 	    downheap(count);
 	else{
 	    swap(1, count);
-	    array_[0] = count--;
+	    array_[0] = Integer.toString(count--);
 	}
+
+	return root;
     }
 
-    private void downheap(count){
+    private void downheap(int count) {
 	int i = 1;
 	// While node is larger than it's child swap and set i to child index
 	while(i < count && (array_[i].compareTo(array_[2*i]) > 0 || array_[i].compareTo(array_[2*i+1]) > 0)){
