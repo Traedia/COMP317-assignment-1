@@ -75,14 +75,14 @@ public class minHeap{
     private void downheap(count){
 	int i = 1;
 	// While node is larger than it's child swap and set i to child index
-	while(i < count && (array_[i].compareTo(array_[2i]) > 0 || array_[i].compareTo(array_[2i+1]) > 0)){
-	    if(array_[2i].compareTo(array_[2i+1]) <= 0){
-		swap(i, 2i);
-		i = 2i;
+	while(i < count && (array_[i].compareTo(array_[2*i]) > 0 || array_[i].compareTo(array_[2*i+1]) > 0)){
+	    if(array_[2*i].compareTo(array_[2*i+1]) <= 0){
+		swap(i, 2*i);
+		i = 2*i;
 	    }
 	    else{
-		swap(i, 2i+1);
-		i = 2i+1;
+		swap(i, 2*i+1);
+		i = 2*i+1;
 	    }
 	}
     }
